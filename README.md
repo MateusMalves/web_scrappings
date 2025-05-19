@@ -1,51 +1,82 @@
-# 🎬 IMDb Async Scraper
 
-Projeto de web scraping assíncrono com Python, que coleta automaticamente dados de filmes populares e dos melhores avaliados no IMDb, utilizando `asyncio`, `aiohttp`, `BeautifulSoup` e `tqdm`.
+# 🎬 **IMDb Async Scraper**
 
-## 🚀 Funcionalidades
+Projeto de web scraping assíncrono com Python, que coleta dados de filmes populares e top-rated do IMDb.  
+Alta performance, fácil manutenção e extensibilidade, com suporte a Docker.
 
-- 📊 Coleta de duas listas separadas:
-  - Filmes mais populares (IMDb Moviemeter)
-  - Top 25 melhores filmes avaliados (IMDb Top Chart)
-- Para cada filme são extraídos:
-  - Título
-  - Data de lançamento
-  - Avaliação (nota)
-  - Sinopse
-- Resultados salvos em arquivos `.csv`
-- Barra de progresso visual com `tqdm`
-- Execução assíncrona com controle de concorrência
+![Python Version](https://img.shields.io/badge/Python-3.7%2B-blue)  
+![License](https://img.shields.io/badge/License-MIT-green)  
+![Status](https://img.shields.io/badge/Status-Ativo-brightgreen)
 
-## 📁 Arquivos Gerados
+---
 
-- `movies_popular.csv` — Filmes populares em alta
-- `movies_top_rated.csv` — Top 25 filmes melhor avaliados da história
+## 📚 **Funcionalidades**
+- 📊 Coleta dados de **filmes populares** e **Top 25 melhores avaliados**.
+- 📅 Extração de: Título, Data de Lançamento, Nota e Sinopse.
+- ⚙️ Controle de concorrência via `.env`.
+- 📂 Resultados exportados em `.csv`.
+- 📈 Barra de progresso visual com `tqdm`.
+- 🧩 Estrutura modular e suporte a Docker.
+- 📝 Logs organizados com `logging`.
 
-## 💻 Tecnologias Utilizadas
+---
 
-- Python 3.7+
-- `aiohttp`
-- `beautifulsoup4`
-- `tqdm`
+## 🚀 **Como Executar**
 
-## 📦 Instalação
-
+### 1️⃣ Instale as dependências:
 ```bash
 pip install -r requirements.txt
 ```
 
-## ▶️ Como Executar
-
+### 2️⃣ Execute o script principal:
 ```bash
-python imdb_scraper_async.py
+python web_scrapping/main.py
 ```
 
-Durante a execução, barras de progresso serão exibidas para cada lista processada.
+### 3️⃣ Configurações no `.env`:
+```env
+HEADERS_USER_AGENT=Mozilla/5.0 (Windows NT 10.0; Win64; x64)
+CONCURRENT_REQUESTS=10
+```
 
-## ⚠️ Aviso Legal
+### 🐳 **Executar com Docker:**
+```bash
+docker build -t imdb_scraper .
+docker run imdb_scraper
+```
 
-Este projeto é apenas para fins educacionais. Scraping de sites como IMDb deve respeitar seus termos de uso. Para uso comercial ou em larga escala, utilize APIs oficiais ou licenciadas.
+---
 
-## 👨‍💻 Autor
+## 📁 **Estrutura de Pastas**
+```
+web_scrapping/
+├── __init__.py
+├── main.py
+├── scraper.py
+├── utils.py
+├── .env
+├── Dockerfile
+requirements.txt
+README.md
+tests/
+└── test_scraper.py
+```
 
-Mateus Mendonça [linkedin](https://www.linkedin.com/in/devmateusmalves/)
+---
+
+## 🧪 **Testes**
+```bash
+pytest tests/
+```
+
+---
+
+## 📜 **Licença**
+Distribuído sob a licença MIT. Consulte o arquivo `LICENSE` para mais informações.
+
+---
+
+## 👨‍💻 **Autor**
+
+**Mateus Mendonça**  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue)](https://www.linkedin.com/in/devmateusmalves/)  
